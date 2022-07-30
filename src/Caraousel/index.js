@@ -42,17 +42,15 @@ function Index({slides,duration, background}) {
         }
     }
     return (
-        <>
-            <div className='carousel'>
-                {
-                    slides.map((slide,index)=>{
-                        return (
-                            <div ref={ref=>SLIDES.current.slides[index]=ref} key={index} className={`slide ${getState(Active, index)}`} style={{backgroundImage: `url(${slide})`, backgroundColor: background?background:'#fff'}}/>
-                        )
-                    })
-                }
-            </div>
-        </>
+      <div className='carousel'>
+        {
+          slides.map((slide,index)=>{
+            return (
+              <div ref={ref=>SLIDES.current.slides[index]=ref} key={index} className={`slide ${getState(Active, index)}`} style={{backgroundImage: `url(${slide})`, backgroundColor: background?background:'#fff'}}/>
+            )
+          })
+        }
+      </div>
     );
 }
 
